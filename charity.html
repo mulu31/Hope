@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope University Charity Club</title>
+    <meta name="description" content="Join Hope University Charity Club to make a difference in our community">
+    <meta name="theme-color" content="#2E7D32">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --primary-light: #4CAF50;
+            --secondary: #FFC107;
+            --accent: #FF5722;
+            --dark: #1B5E20;
+            --light: #E8F5E9;
+            --text: #212121;
+            --text-light: #757575;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600"><circle cx="200" cy="150" r="80" fill="%231B5E20" opacity="0.3"/><circle cx="1000" cy="450" r="120" fill="%231B5E20" opacity="0.3"/><circle cx="800" cy="150" r="60" fill="%231B5E20" opacity="0.3"/><circle cx="400" cy="450" r="100" fill="%231B5E20" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(20px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--text);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background-color: #FFD54F;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary);
+            animation: expandWidth 1s ease;
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 60px; }
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-image {
+            background-color: var(--primary-light);
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow);
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: fadeIn 1s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Events Section */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .event-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: slideUp 0.5s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .event-card:nth-child(1) { animation-delay: 0.1s; }
+        .event-card:nth-child(2) { animation-delay: 0.2s; }
+        .event-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-image {
+            height: 180px;
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .event-card:hover .event-image {
+            transform: scale(1.05);
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .event-content h3 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .event-content p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            background-color: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            animation: zoomIn 0.5s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .gallery-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+            animation: zoomIn 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Donation Section */
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .donation-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .donation-form {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
+            animation: slideUp 0.5s ease;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Progress bars */
+        .progress-container {
+            margin: 2rem 0;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 5px;
+            transition: width 1.5s ease;
+            width: 0;
+        }
+
+        /* Volunteer Section */
+        .volunteer-opportunities {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .volunteer-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: slideUp 0.5s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .volunteer-card:nth-child(1) { animation-delay: 0.1s; }
+        .volunteer-card:nth-child(2) { animation-delay: 0.2s; }
+        .volunteer-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .volunteer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .volunteer-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .volunteer-card ul {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .volunteer-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .volunteer-card li:hover {
+            padding-left: 10px;
+            color: var(--primary);
+        }
+
+        .volunteer-card li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Members Section */
+        .members-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            animation: fadeIn 0.5s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        .member-card:nth-child(1) { animation-delay: 0.1s; }
+        .member-card:nth-child(2) { animation-delay: 0.2s; }
+        .member-card:nth-child(3) { animation-delay: 0.3s; }
+        .member-card:nth-child(4) { animation-delay: 0.4s; }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+
+        .member-card:hover .member-avatar {
+            transform: scale(1.1);
+            background-color: var(--primary);
+        }
+
+        .member-card h3 {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover .contact-icon {
+            background-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+            animation: expandWidth 1s ease;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #E0E0E0;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            color: var(--text);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Install Prompt */
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            display: none;
+            z-index: 1000;
+            max-width: 300px;
+            animation: slideInRight 0.5s ease;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .install-prompt p {
+            margin-bottom: 1rem;
+        }
+
+        .install-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .install-btn {
+            flex: 1;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .install-accept {
+            background-color: var(--secondary);
+            color: var(--text);
+        }
+
+        .install-accept:hover {
+            background-color: #FFD54F;
+        }
+
+        .install-dismiss {
+            background-color: transparent;
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
+
+        .install-dismiss:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: var(--transition);
+            }
+
+            nav ul.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Offline notification */
+        .offline-notification {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            z-index: 1001;
+            display: none;
+            animation: slideDown 0.5s ease;
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Offline Notification -->
+    <div class="offline-notification" id="offlineNotification">
+        You are currently offline. Some features may be limited.
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <h1>HopeU Charity Club</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                    <li><a href="#members">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Making a Difference Together</h2>
+            <p>Join Hope University's Charity Club to help those in need and create positive change in our community.</p>
+            <a href="#volunteer" class="btn">Join Us Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section-title">
+            <h2>About Our Club</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>The Hope University Charity Club is dedicated to making a positive impact in our local community through volunteer work, fundraising events, and awareness campaigns.</p>
+                <p>Founded in 2015, we've organized over 50 events and raised more than $25,000 for various causes including homelessness, education, and environmental conservation.</p>
+                <p>We welcome students from all faculties who share our passion for helping others and creating a better world.</p>
+                <a href="#events" class="btn" style="margin-top: 1rem;">Our Events</a>
+            </div>
+            <div class="about-image">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+        
+        <div class="impact-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="stat-number">$25,380</div>
+                <div class="stat-label">Funds Raised</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">125</div>
+                <div class="stat-label">Active Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="stat-number">54</div>
+                <div class="stat-label">Events Organized</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <div class="stat-number">2,150</div>
+                <div class="stat-label">Volunteer Hours</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section" id="events">
+        <div class="section-title">
+            <h2>Upcoming Events</h2>
+        </div>
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="event-content">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>October 15, 2023</span>
+                    </div>
+                    <h3>Community Food Drive</h3>
+                    <p>Help us collect non-perishable food items for local families in need. Collection points across campus.</p>
+                    <a href="#" class="btn">Volunteer</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-running"></i>
+                </div>
+                <div class="event-content">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>November 5, 2023</span>
+                    </div>
+                    <h3>Charity Fun Run</h3>
+                    <p>5K run through campus to raise funds for children's education. All fitness levels welcome!</p>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Goal: $5,000</span>
+                            <span id="runProgress">$3,250</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn">Register</a>
+                </div>
+            </div>
+            <div class="event-card">
+                <div class="event-image">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="event-content">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>December 2, 2023</span>
+                    </div>
+                    <h3>Campus Cleanup Day</h3>
+                    <p>Join us in making our campus greener and cleaner. Gloves and bags provided.</p>
+                    <a href="#" class="btn">Participate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="section-title">
+            <h2>Our Gallery</h2>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item" data-index="0">
+                <i class="fas fa-image"></i>
+                <span>Food Drive 2023</span>
+            </div>
+            <div class="gallery-item" data-index="1">
+                <i class="fas fa-image"></i>
+                <span>Charity Run</span>
+            </div>
+            <div class="gallery-item" data-index="2">
+                <i class="fas fa-image"></i>
+                <span>Beach Cleanup</span>
+            </div>
+            <div class="gallery-item" data-index="3">
+                <i class="fas fa-image"></i>
+                <span>Fundraiser Gala</span>
+            </div>
+            <div class="gallery-item" data-index="4">
+                <i class="fas fa-image"></i>
+                <span>Tutoring Program</span>
+            </div>
+            <div class="gallery-item" data-index="5">
+                <i class="fas fa-image"></i>
+                <span>Community Garden</span>
+            </div>
+        </div>
+
+        <!-- Gallery Modal -->
+        <div class="gallery-modal" id="galleryModal">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div id="modalImage" style="width: 100%; height: 400px; background-color: var(--primary-light); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                    Image Preview - This would show the actual image in a real implementation
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="section" id="donate">
+        <div class="section-title">
+            <h2>Support Our Cause</h2>
+        </div>
+        
+        <div class="donation-options">
+            <div class="donation-card">
+                <h3>Food Drive</h3>
+                <p>Help us provide meals for families in need</p>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Goal: 500 meals</span>
+                        <span>325 meals</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="donation-amount">$25</div>
+                <p>Provides 10 meals</p>
+                <button class="btn">Donate Now</button>
+            </div>
+            <div class="donation-card">
+                <h3>Education Fund</h3>
+                <p>Support underprivileged students</p>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Goal: $10,000</span>
+                        <span>$6,750</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 67.5%"></div>
+                    </div>
+                </div>
+                <div class="donation-amount">$50</div>
+                <p>Buys school supplies for 5 students</p>
+                <button class="btn">Donate Now</button>
+            </div>
+            <div class="donation-card">
+                <h3>Environmental Project</h3>
+                <p>Help us plant trees in the community</p>
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Goal: 200 trees</span>
+                        <span>120 trees</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="donation-amount">$15</div>
+                <p>Plants 3 trees</p>
+                <button class="btn">Donate Now</button>
+            </div>
+        </div>
+
+        <div class="donation-form">
+            <h3 style="text-align: center; margin-bottom: 1.5rem;">Make a Custom Donation</h3>
+            <form id="donationForm">
+                <div class="form-group">
+                    <label for="donationAmount">Donation Amount ($)</label>
+                    <input type="number" id="donationAmount" class="form-control" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="donationPurpose">Purpose (Optional)</label>
+                    <select id="donationPurpose" class="form-control">
+                        <option value="">General Fund</option>
+                        <option value="food">Food Drive</option>
+                        <option value="education">Education Fund</option>
+                        <option value="environment">Environmental Project</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="donorName">Your Name</label>
+                        <input type="text" id="donorName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="donorEmail">Your Email</label>
+                        <input type="email" id="donorEmail" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="donorMessage">Message (Optional)</label>
+                    <textarea id="donorMessage" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Donate Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Volunteer Section -->
+    <section class="section" id="volunteer">
+        <div class="section-title">
+            <h2>Volunteer With Us</h2>
+        </div>
+        
+        <div class="volunteer-opportunities">
+            <div class="volunteer-card">
+                <h3>Event Volunteers</h3>
+                <p>Help us organize and run our charity events</p>
+                <ul>
+                    <li>Set up and manage event stations</li>
+                    <li>Welcome and guide participants</li>
+                    <li>Assist with event logistics</li>
+                    <li>Help with cleanup after events</li>
+                </ul>
+                <button class="btn">Sign Up</button>
+            </div>
+            <div class="volunteer-card">
+                <h3>Fundraising Team</h3>
+                <p>Join our efforts to raise funds for important causes</p>
+                <ul>
+                    <li>Plan and execute fundraising campaigns</li>
+                    <li>Reach out to potential donors</li>
+                    <li>Manage donation records</li>
+                    <li>Create fundraising materials</li>
+                </ul>
+                <button class="btn">Sign Up</button>
+            </div>
+            <div class="volunteer-card">
+                <h3>Community Outreach</h3>
+                <p>Connect with the community and spread awareness</p>
+                <ul>
+                    <li>Represent the club at community events</li>
+                    <li>Create educational materials</li>
+                    <li>Manage social media accounts</li>
+                    <li>Organize awareness campaigns</li>
+                </ul>
+                <button class="btn">Sign Up</button>
+            </div>
+        </div>
+
+        <div class="donation-form" style="margin-top: 3rem;">
+            <h3 style="text-align: center; margin-bottom: 1.5rem;">Volunteer Registration</h3>
+            <form id="volunteerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="volunteerName">Full Name</label>
+                        <input type="text" id="volunteerName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerEmail">Email</label>
+                        <input type="email" id="volunteerEmail" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="volunteerPhone">Phone Number</label>
+                        <input type="tel" id="volunteerPhone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerMajor">Major/Department</label>
+                        <input type="text" id="volunteerMajor" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="volunteerInterest">Area of Interest</label>
+                    <select id="volunteerInterest" class="form-control" required>
+                        <option value="">Select an area</option>
+                        <option value="events">Event Volunteers</option>
+                        <option value="fundraising">Fundraising Team</option>
+                        <option value="outreach">Community Outreach</option>
+                        <option value="all">Any Area</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="volunteerExperience">Previous Volunteer Experience (Optional)</label>
+                    <textarea id="volunteerExperience" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Members Section -->
+    <section class="section" id="members">
+        <div class="section-title">
+            <h2>Our Team</h2>
+        </div>
+        <div class="members-container">
+            <div class="member-card">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>Sarah Johnson</h3>
+                <div class="member-role">President</div>
+                <p>Psychology Major, Class of 2024</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>Michael Chen</h3>
+                <div class="member-role">Vice President</div>
+                <p>Business Administration, Class of 2024</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>Emily Rodriguez</h3>
+                <div class="member-role">Treasurer</div>
+                <p>Economics Major, Class of 2025</p>
+            </div>
+            <div class="member-card">
+                <div class="member-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3>David Kim</h3>
+                <div class="member-role">Event Coordinator</div>
+                <p>Communications Major, Class of 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Student Union Building, Room 205<br>Hope University Campus</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>charityclub@hopeuniversity.edu</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>(555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h3>Meeting Times</h3>
+                        <p>Every Tuesday, 5:00 PM - 6:30 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>HopeU Charity Club</h3>
+                <p>Making a difference in our community through volunteer work and fundraising events.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                    <li><a href="#members">Our Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Get Involved</h3>
+                <ul class="footer-links">
+                    <li><a href="#volunteer">Become a Member</a></li>
+                    <li><a href="#volunteer">Volunteer Opportunities</a></li>
+                    <li><a href="#events">Upcoming Events</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#contact">Partnerships</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Hope University Charity Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <p>Install our app for quick access to charity events and updates!</p>
+        <div class="install-buttons">
+            <button class="install-btn install-accept" id="installAccept">Install</button>
+            <button class="install-btn install-dismiss" id="installDismiss">Not Now</button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // Contact form submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Donation form submission
+        const donationForm = document.getElementById('donationForm');
+        donationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const amount = document.getElementById('donationAmount').value;
+            alert(`Thank you for your donation of $${amount}! You will receive a confirmation email shortly.`);
+            donationForm.reset();
+        });
+
+        // Volunteer form submission
+        const volunteerForm = document.getElementById('volunteerForm');
+        volunteerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your volunteer application! We will contact you soon.');
+            volunteerForm.reset();
+        });
+
+        // Gallery functionality
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const galleryModal = document.getElementById('galleryModal');
+        const modalClose = document.getElementById('modalClose');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                galleryModal.classList.add('active');
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            galleryModal.classList.remove('active');
+        });
+
+        galleryModal.addEventListener('click', (e) => {
+            if (e.target === galleryModal) {
+                galleryModal.classList.remove('active');
+            }
+        });
+
+        // Install prompt
+        let deferredPrompt;
+        const installPrompt = document.getElementById('installPrompt');
+        const installAccept = document.getElementById('installAccept');
+        const installDismiss = document.getElementById('installDismiss');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+            // Show the install prompt
+            setTimeout(() => {
+                installPrompt.style.display = 'block';
+            }, 3000);
+        });
+
+        installAccept.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                // Show the install prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                // Clear the saved prompt since it can't be used again
+                deferredPrompt = null;
+                // Hide the install prompt
+                installPrompt.style.display = 'none';
+            }
+        });
+
+        installDismiss.addEventListener('click', () => {
+            installPrompt.style.display = 'none';
+        });
+
+        // Offline detection
+        const offlineNotification = document.getElementById('offlineNotification');
+
+        window.addEventListener('online', () => {
+            offlineNotification.style.display = 'none';
+        });
+
+        window.addEventListener('offline', () => {
+            offlineNotification.style.display = 'block';
+        });
+
+        // Service Worker Registration for PWA functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Add to Home Screen functionality
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+            installPrompt.style.display = 'none';
+        });
+
+        // Animate progress bars on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+        });
+
+        // Scroll animations
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('animated');
+                }
+            });
+        };
+
+        // Add animation class to elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('.event-card, .volunteer-card, .member-card, .gallery-item');
+            elementsToAnimate.forEach(element => {
+                element.classList.add('animate-on-scroll');
+            });
+            
+            // Trigger initial check
+            animateOnScroll();
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
